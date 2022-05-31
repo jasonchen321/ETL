@@ -10,6 +10,14 @@
 # Transforms the text delimeter from "#" to "," and saves to a csv file.
 # Loads the data from the CSV file into the table 'access_log' in PostgreSQL database.
 
+#Pre-Step: 
+#start_postgres --#Start the Postgres server
+#\c template1; --#To connect to the database 'template1'
+#CREATE TABLE access_log(timestamp TIMESTAMP, latitude float, longitude float, visitor_id char(37)); --#Create the table 
+#\q --#Once you receive the confirmation message 'CREATE TABLE', quit from psql
+
+
+#Start: Create a shell script named, xxxx.sh
 
 # Extract phase
 
@@ -37,3 +45,8 @@ echo "Loading data"
 # copy the file to the table 'access_log' through command pipeline.
 
 echo "\c template1;\COPY access_log  FROM '/home/project/transformed-data.csv' DELIMITERS ',' CSV HEADER;" | psql --username=postgres --host=localhost
+
+#Run Script
+#bash cp-access-log.sh
+
+
