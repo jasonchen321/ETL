@@ -47,6 +47,8 @@ transform_and_load=BashOperator(
 #     dag=dag
 # )
 
+# task pipeline
+extract >> transform_and_load
 
 #-------------------------------------Terminal----------------------------------------#
 #copy dag to AIRFLOW
