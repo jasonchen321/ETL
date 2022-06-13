@@ -46,3 +46,18 @@ transform_and_load=BashOperator(
 #     bash_command='echo "load"',
 #     dag=dag
 # )
+
+
+#-------------------------------------Terminal----------------------------------------#
+#copy dag to AIRFLOW
+#cp my_first_dag.py $AIRFLOW_HOME/dags
+
+#list out all the existing DAGs in Airflow
+#airflow dags list
+
+#Verify that my-first-dag is a part of the output
+#airflow dags list|grep "my-first-dag"
+
+#Run the command below to list out all the tasks in my-first-dag.
+#airflow tasks list my-first-dag
+
